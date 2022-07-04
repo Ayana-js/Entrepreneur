@@ -17,6 +17,6 @@ RUN chmod +x /app/node_modules/.bin/react-scripts
 # RUN chmod a+x /Main/node_modules/.bin/react-scripts
 # RUN npm i
 # add app
-COPY ./
+COPY ..
 # start app
 CMD ["npm", "start"]
