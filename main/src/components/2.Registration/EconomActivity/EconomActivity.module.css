@@ -1,0 +1,37 @@
+.pages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_page {
+    width: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.text {
+    font-family: 'Roboto';
+    font-size: 15px;
+    line-height: 22px;
+    border-bottom: 1px solid  #F1F2F5;
+    padding: 16px;
+}
+
+.description {
+    font-family: 'Roboto';
+    font-size: 15px;
+    line-height: 22px;
+    border-bottom: 1px solid  #F1F2F5;
+    padding: 16px;
+}

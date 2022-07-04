@@ -1,0 +1,7 @@
+.region_items p {
+    color: var(--color-dark)
+}
+
+.region_items img {
+    margin-left: auto;
+}

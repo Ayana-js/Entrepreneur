@@ -1,0 +1,35 @@
+.wrap_preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preload {
+    margin-top: 1.1in;
+    width: 3.416in;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: center;
+}
+
+.loader-block {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    /* align-items: center ; */
+}
+
+.main-loader {
+    border: 3px solid #0092A1;
+    border-top: 3px solid #FFFFFF;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

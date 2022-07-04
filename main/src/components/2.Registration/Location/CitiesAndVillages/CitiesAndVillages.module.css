@@ -1,0 +1,11 @@
+.citys_items p {
+    color: var(--color-dark)
+}
+
+.citys_items img {
+    margin-left: auto;
+}
+
+.preload {
+    margin-top: 40%;
+}

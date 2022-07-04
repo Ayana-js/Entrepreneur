@@ -1,0 +1,7 @@
+.district_items p {
+    color: var(--color-dark)
+}
+
+.district_items img {
+    margin-left: auto;
+}

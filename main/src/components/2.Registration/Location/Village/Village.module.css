@@ -1,0 +1,7 @@
+.village_items p {
+    color: var(--color-dark)
+}
+
+.village_items img {
+    margin-left: auto;
+}
