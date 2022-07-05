@@ -56,7 +56,7 @@ function MainPage(props) {
             </div>
              {!info.isHas ? <IPsContainer info={info.orders} /> : <NoIP /> }
             <div className={styles.buttons}>
-                <Link to='/ind-ent/registration' >
+                <Link to='/ie-register/registration' >
                     <button className={`${app.btn} ${app.pages_title}`} >Отправить заявку</button>
                 </Link>
             </div>

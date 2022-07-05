@@ -49,7 +49,7 @@ const Registration = (props) => {
                                 />
                                 <label htmlFor='text'>Номер паспорта</label>
                             </div>
-                            <NavLink to='/ind-ent/region'>
+                            <NavLink to='/ie-register/region'>
                                 <div className={reg.form_title}>
                                     <input
                                         className={touched.region && errors.region ? reg.error : reg.input}
@@ -77,7 +77,7 @@ const Registration = (props) => {
                                 />
                                 <label htmlFor='text'>Точный адрес деятельности</label>
                             </div>
-                            <NavLink to='/ind-ent/addressType'>
+                            <NavLink to='/ie-register/addressType'>
                                 <div className={reg.form_title}>
                                     <input
                                         className={touched.addressType && errors.addressType ? reg.error : reg.input}
@@ -111,7 +111,7 @@ const Registration = (props) => {
                                     className={`${app.btn_light} ${app.btn_disabled}`}> Продолжить </button> :
                                     <button onClick={handleSubmit}
                                     className={reg.button}>    
-                                    <NavLink to='/ind-ent/activity'
+                                    <NavLink to='/ie-register/activity'
                                         className={app.btn_light}>
                                         Продолжить
                                     </NavLink>

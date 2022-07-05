@@ -29,7 +29,7 @@ const AddressType = (props) => {
                 <h2>Тип адреса</h2>
                 <div className={styles.content}>
                 {info.map(info => 
-                <Link to='/ind-ent/registration'>
+                <Link to='/ie-register/registration'>
                 { info === 'BY_REGISTRATION' && 
                 <p className={styles.description} onClick={(e) =>{ 
                     props.addAAddressType(e.target.innerText)

@@ -40,7 +40,7 @@ const CitiesAndVillages = (props) => {
                                 props.addCity(e.target.innerText);
                                 props.addCityId(info.id)
                             }}>
-                                {info.isFinal ? <NavLink to='/ind-ent/registration'>
+                                {info.isFinal ? <NavLink to='/ie-register/registration'>
                                     <li className={`${styles.citys_items} ${app.items}`} 
                                     onClick={() => {props.addFinalRegion(info.name)
                                                     props.addFinalCode(info.districtCode)}}>
@@ -49,7 +49,7 @@ const CitiesAndVillages = (props) => {
                                     </li>
                                 </NavLink> :
                                     <NavLink to={{
-                                        pathname: '/ind-ent/district'
+                                        pathname: '/ie-register/district'
                                     }}>
                                         <li className={`${styles.citys_items} ${app.items}`}>
                                             <p>{info.name}</p>

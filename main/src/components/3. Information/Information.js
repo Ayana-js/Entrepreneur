@@ -77,10 +77,10 @@ const Information = (props) => {
                 </div>
                 <div className={styles.footer}>
                     {response ?
-                        <Link to='/ind-ent/success'>
+                        <Link to='/ie-register/success'>
                             <button className={app.btn_light} onClick={() => onSend()}>Отправить заявку</button>
                         </Link> :
-                        <Link to='/ind-ent/error'>
+                        <Link to='/ie-register/error'>
                             <button className={app.btn_light} onClick={() => onSend()}>Отправить заявку</button>
                         </Link>}
                 </div>

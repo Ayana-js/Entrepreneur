@@ -1,6 +1,6 @@
 {
-  "name": "ind-ent",
-  "homepage": "ind-ent",
+  "name": "ie-register",
+  "homepage": "ie-register",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

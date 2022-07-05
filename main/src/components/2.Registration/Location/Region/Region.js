@@ -36,7 +36,7 @@ const Region = (props) => {
             <div className={`${region.region_content} ${app.pages_content}`}>
                 <h2>Выбрать область</h2>
                 <ul className={app.title}> 
-                    <NavLink to='/ind-ent/cities'>
+                    <NavLink to='/ie-register/cities'>
                         <div onClick={(e) => {
                                 onAddRegion(e.target.innerText)
                                 }}>

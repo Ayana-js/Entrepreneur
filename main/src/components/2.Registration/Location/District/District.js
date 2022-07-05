@@ -40,7 +40,7 @@ const District = (props) => {
                             // { props.addFinalId(info.id)}
                         }}>
                             {info.isFinal? <NavLink to={{
-                                pathname: '/ind-ent/registration'}}>
+                                pathname: '/ie-register/registration'}}>
                                 <li className={`${district.citys_items} ${app.items}`}
                                 onClick={()=> {props.addFinalRegion(info.name)
                                                  props.addFinalCode(info.districtCode)}}>
@@ -48,7 +48,7 @@ const District = (props) => {
                                     <img src={arrow} alt="" />
                                 </li>
                             </NavLink>: <NavLink to={{
-                                pathname: '/ind-ent/village'}}>
+                                pathname: '/ie-register/village'}}>
                                 <li className={`${district.citys_items} ${app.items}`}>
                                     <p>{info.name}</p>
                                     <img src={arrow} alt="" />

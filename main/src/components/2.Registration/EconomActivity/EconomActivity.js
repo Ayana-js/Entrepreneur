@@ -57,7 +57,7 @@ const EconomActivity = (props) => {
                         <Search {...{ search }} />
                             <div className={styles.content}>
                                 {filtered.map(info =>
-                                <Link to='/ind-ent/taxes' key={info.id}>
+                                <Link to='/ie-register/taxes' key={info.id}>
                                     <p className={styles.text} key={info.id} onClick={(e) => {
                                         props.addActivity(e.target.innerText)
                                         props.addActivityId(info.id)}}>{info.text}

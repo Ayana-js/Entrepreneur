@@ -22,19 +22,19 @@ function App() {
     return (
         <Router>   
           <Routes>
-                <Route path='/ind-ent' element={<MainPageContainer /> }/>
-                <Route path='ind-ent/denialReason' element={<DenialReason /> }/>
-                <Route path='ind-ent/registration' element={<RegistrationContainer /> }/>
-                <Route path='ind-ent/region' element={<RegionContainer /> }/>
-                <Route path='ind-ent/cities' element={<CitiesContainer /> }/>
-                <Route path='ind-ent/district' element={<DistrictContainer /> }/>
-                <Route path='ind-ent/village' element={<VillageContainer /> }/>
-                <Route path='ind-ent/addressType' element={<AddressTypeContainer /> }/>
-                <Route path='ind-ent/activity' element={<ActivityContainer /> }/>
-                <Route path='ind-ent/taxes' element={<TaxesContainer /> }/>
-                <Route path='ind-ent/information' element={<InformationContainer /> }/>
-                <Route path='ind-ent/success' element={<SuccessContainer /> }/>
-                <Route path='ind-ent/error' element={<ErrorResponseContainer /> }/>
+                <Route path='/ie-register' element={<MainPageContainer /> }/>
+                <Route path='ie-register/denialReason' element={<DenialReason /> }/>
+                <Route path='ie-register/registration' element={<RegistrationContainer /> }/>
+                <Route path='ie-register/region' element={<RegionContainer /> }/>
+                <Route path='ie-register/cities' element={<CitiesContainer /> }/>
+                <Route path='ie-register/district' element={<DistrictContainer /> }/>
+                <Route path='ie-register/village' element={<VillageContainer /> }/>
+                <Route path='ie-register/addressType' element={<AddressTypeContainer /> }/>
+                <Route path='ie-register/activity' element={<ActivityContainer /> }/>
+                <Route path='ie-register/taxes' element={<TaxesContainer /> }/>
+                <Route path='ie-register/information' element={<InformationContainer /> }/>
+                <Route path='ie-register/success' element={<SuccessContainer /> }/>
+                <Route path='ie-register/error' element={<ErrorResponseContainer /> }/>
           </Routes>
       </Router>
     );

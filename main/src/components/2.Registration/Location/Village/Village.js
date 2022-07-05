@@ -42,7 +42,7 @@ const Village = (props) => {
                         {props.addVillage(info.name)
                         }}>
                         {info.isFinal ?
-                            <NavLink to='/ind-ent/registration'>
+                            <NavLink to='/ie-register/registration'>
                                 <li className={`${village.village_items} ${app.items}`} jkey={info.id}
                                 onClick={()=> {props.addFinalRegion(info.name)
                                                props.addFinalCode(info.districtCode)}}>
@@ -50,7 +50,7 @@ const Village = (props) => {
                                     <img src={arrow} alt="" />
                                 </li>
                             </NavLink> :
-                            <NavLink to='/ind-ent/district'>
+                            <NavLink to='/ie-register/district'>
                                 <li className={`${village.village_items} ${app.items}`} jkey={info.id}>
                                     <p>{info.name}</p>
                                     <img src={arrow} alt="" />
