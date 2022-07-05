@@ -10,7 +10,6 @@ import { setRegionId } from '../../../../redux/id-reducer';
 import { baseUrl } from '../../../../api/api';
 
 const Region = (props) => {
-    const token = localStorage.getItem('token')
     const [info, setInfo] = useState([])
     const [isFetching, setIsFetching] = useState(false)
 

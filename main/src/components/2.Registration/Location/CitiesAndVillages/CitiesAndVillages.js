@@ -11,7 +11,6 @@ import { setCityId, setFinalCode } from '../../../../redux/id-reducer';
 import { baseUrl } from '../../../../api/api';
 
 const CitiesAndVillages = (props) => {
-    const token = localStorage.getItem('token')
     const [info, setInfo] = useState([])
     const [isFetching, setIsFetching] = useState(false)
 

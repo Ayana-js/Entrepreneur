@@ -1,5 +1,4 @@
 import React from 'react';
-import search from '../../../../assests/search.svg'
 import './Search.css'
 
 const Search = (props) => {
