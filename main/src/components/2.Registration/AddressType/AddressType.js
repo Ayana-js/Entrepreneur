@@ -20,7 +20,6 @@ const AddressType = (props) => {
             })
     }, []);
     const i = info.map(i => i)
-    console.log(i);
     return (
         <div className={styles.pages}>
             {
@@ -29,6 +28,7 @@ const AddressType = (props) => {
                 <h2>Тип адреса</h2>
                 <div className={styles.content}>
                 {info.map(info => 
+                <div key={info.id}> 
                 <Link to='/ie-register/registration'>
                 { info === 'BY_REGISTRATION' && 
                 <p className={styles.description} onClick={(e) =>{ 
@@ -42,7 +42,7 @@ const AddressType = (props) => {
                 <p className={styles.description}  onClick={(e) => {
                     props.addAAddressType(e.target.innerText)
                     props.addAAddressTypeContent(info)}}>КФХ</p>} 
-                </Link>
+                </Link> </div>
                 )} </div>
             </div>
                 }

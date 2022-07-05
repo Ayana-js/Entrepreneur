@@ -18,13 +18,11 @@ const EconomActivity = (props) => {
         axios.get(baseUrl + `/api/v1/activities`)
             .then(res => {
                 const info = res.data
-                console.log(info);
                 setInfo(info)
                 setIsFetching(false)
             })
             .catch(err => {
                 setErr(err.message)
-                console.log(err);
                 setIsFetching(false)
             })
     }, [])

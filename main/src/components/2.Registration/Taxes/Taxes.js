@@ -31,7 +31,8 @@ const Taxes = (props) => {
                     <h2>Вид налогового режима</h2>
                     <div className={styles.content}>
                         {info.map(info =>
-                            <Link to='/ie-register/information' key={info.id}>
+                        <div key={info.id}> 
+                            <Link to='/ie-register/information'>
                                 {info === 'GENERAL' && <p className={styles.description} onClick={(e) => {
                                     props.addTax(e.target.innerText)
                                     props.addTaxMode(info)
@@ -56,7 +57,7 @@ const Taxes = (props) => {
                                     props.addTax(e.target.innerText)
                                     props.addTaxMode(info)
                                 }}>Единый налог </p>}
-                            </Link>)}
+                            </Link> </div>)}
                     </div>
                 </div>
             }

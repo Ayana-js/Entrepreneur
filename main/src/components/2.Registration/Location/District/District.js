@@ -15,7 +15,6 @@ const District = (props) => {
     const [isFetching, setIsFetching] = useState(true)
 
     useEffect(() => {
-        console.log(props.id);
                 axios.post(baseUrl + `/api/v1/region`,
                 {id: props.id})
                     .then(res => {
