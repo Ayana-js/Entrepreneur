@@ -17,6 +17,7 @@ import AddressTypeContainer from './components/2.Registration/AddressType/Addres
 import InformationContainer from './components/3. Information/Information';
 import SuccessContainer from './common/Success/Success';
 import ErrorResponseContainer from './common/ErrorResponse/ErrorResponse';
+import InfoContainer from './components/1.Main page/Info/Info';
 
 function App() {
     return (
@@ -35,6 +36,7 @@ function App() {
                 <Route path='ie-register/information' element={<InformationContainer /> }/>
                 <Route path='ie-register/success' element={<SuccessContainer /> }/>
                 <Route path='ie-register/error' element={<ErrorResponseContainer /> }/>
+                <Route path='ie-register/info' element={<InfoContainer /> }/>
           </Routes>
       </Router>
     );

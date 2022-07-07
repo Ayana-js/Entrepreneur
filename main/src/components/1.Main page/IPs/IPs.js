@@ -8,7 +8,7 @@ const IPs = ({ info }) => {
     return (
         <>
             {info.map(info =>
-                <Link to='information' key={info.created}>
+                <Link to={info.status === 'APPROVED' && 'info'} key={info.created}>
                     <div className={styles.innerBlock}>
                         <div className={styles.innerBlock_status}>
                             <p className={styles.status}>Статус заявки:</p>
@@ -19,8 +19,8 @@ const IPs = ({ info }) => {
                         <div className={styles.innerBlock_info}>
                             <p className={styles.info_name}> Заявка ИП на:
                                 <br></br>
-                                <span> Выращивание бобовых культур </span> </p>
-                            {info.status === 'APPROVED' && <div className={styles.qrcode}>
+                                <span> {info.activityName} </span> </p>
+                            {info.status === 'APPROVED' && <div className={info.pdf? styles.qrcode: styles.noQrcode}>
                                 <QRCode
                                     className="QRCode"
                                     id="qr-gen"

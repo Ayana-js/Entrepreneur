@@ -1,44 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import styles from './Information.module.css'
-import app from '../../App.module.css'
-import { baseUrl } from '../../api/api';
-import axios from 'axios'
-import { setIsFetching, setResponse } from '../../redux/reducer';
-import { Link } from 'react-router-dom';
+import app from '../../../App.module.css'
+import styles from '../../3. Information/Information.module.css'
 
-const Information = (props) => {
+const Info = (props) => {
+
     const phone = localStorage.getItem('phone')
     const valueRegion = props.region ? props.region + ', ' + props.city : null
-    const [response, setResponse] = useState(false)
-
-    const onSend = () => {
-        setIsFetching(true)
-        axios.post(baseUrl + '/api/v1/create-order?phone=' + phone,
-            {
-                passportNumber: props.passport,
-                oblast: props.region,
-                finalAddress: props.finalRegion,
-                street: props.exactAddress,
-                districtCode: props.finalCode,
-                businessAddress: props.region + ', ' + props.city + ', ' + props.district + ', ' + props.village + ', ' + props.exactAddress,
-                email: props.email,
-                taxMode: props.taxMode,
-                addressType: props.addressTypeContent,
-                activityName: props.activity,
-                activityId: props.activityId
-            })
-            .then(res => {
-                setResponse(res.data.succeed)
-                props.addResponse(res.data)
-                props.addIsFetching(false)
-            })
-    }
-
     return (
         <div className={app.pages}>
             <div className={styles.content}>
                 <h2>Информация</h2>
+                <div className={styles.block}>
+                    <p className={styles.info}> Статус </p>
+                    <p className={styles.info_content}> {props.info.inn} </p>
+                </div>
                 <div className={styles.block}>
                     <p className={styles.info}> ИНН </p>
                     <p className={styles.info_content}> {props.info.inn} </p>
@@ -75,14 +51,7 @@ const Information = (props) => {
                     <p className={styles.info}>Вид налога</p>
                     <p className={styles.info_content}> {props.tax} </p>
                 </div>
-                <div className={styles.footer}>
-                    {response ?
-                        <Link to='/ie-register/success'>
-                            <button className={app.btn_light} onClick={() => onSend()}>Отправить заявку</button>
-                        </Link> :
-                        <Link to='/ie-register /error'>
-                            <button className={app.btn_light} onClick={() => onSend()}>Отправить заявку</button>
-                        </Link>}
+                <div className={styles.footer}> 
                 </div>
             </div>
         </div>
@@ -110,17 +79,17 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapStateToDispatch = (dispatch) => {
-    return {
-        addResponse: (text) => {
-            dispatch(setResponse(text))
-        },
-        addIsFetching: (text) => {
-            dispatch(setIsFetching(text))
-        }
-    }
-}
+// let mapStateToDispatch = (dispatch) => {
+//     return {
+//         addResponse: (text) => {
+//             dispatch(setResponse(text))
+//         },
+//         addIsFetching: (text) => {
+//             dispatch(setIsFetching(text))
+//         }
+//     }
+// }
 
-const InformationContainer = connect(mapStateToProps, mapStateToDispatch)(Information)
+const InfoContainer = connect(mapStateToProps, null)(Info)
 
-export default InformationContainer;
+export default InfoContainer;

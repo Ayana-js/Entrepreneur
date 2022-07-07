@@ -34,12 +34,12 @@ function MainPage(props) {
             .catch(() => {
                 setErr(true);
                 setIsFetching(false)
-            })
+            })  
         }, []);
         
-        // if (err) {
-        //     return <div> Error</div>
-        // }
+        if (err) {
+            return <div> Error</div>
+        }
 
     return (
         <div className={`${styles.main_page} ${app.pages}`}>
