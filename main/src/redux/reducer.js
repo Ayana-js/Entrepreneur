@@ -7,6 +7,8 @@ const SET_VALUES = 'SET_VALUES'
 const SET_FINAL_REGION = 'SET_FINAL_REGION'
 const SET_RESPONSE = 'SET_RESPONSE'
 const SET_IS_FETCHING = 'SET_IS_FETCHING'
+const SET_REASON = 'SET_REASON'
+const SET_ORDER = 'SET_ORDER'
 
 
 const initialState = {
@@ -17,7 +19,9 @@ const initialState = {
     village: '',
     finalRegion: '',
     response: null,
-    isFetching: false
+    isFetching: true,
+    reason: '',
+    order: null,
 }
 
 const reducer = (state = initialState, action ) => {
@@ -67,6 +71,16 @@ const reducer = (state = initialState, action ) => {
                 ...state,
                 isFetching: action.payload
             }
+        case SET_REASON:
+            return {
+                ...state,
+                reason: action.payload
+            }
+        case SET_ORDER:
+            return {
+                ...state,
+                order: action.payload
+            }
         default:
             return state
     }
@@ -81,5 +95,7 @@ export const setVillage = (payload) => ({ type: SET_VILLAGE, payload })
 export const setFinalRegion = (payload) => ({ type: SET_FINAL_REGION, payload })
 export const setResponse = (payload) => ({ type: SET_RESPONSE, payload })
 export const setIsFetching = (payload) => ({ type: SET_IS_FETCHING, payload })
+export const setReason = (payload) => ({ type: SET_REASON, payload })
+export const setOrder = (payload) => ({ type: SET_ORDER, payload })
 
 export default reducer

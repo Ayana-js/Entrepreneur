@@ -8,7 +8,7 @@
 .block {
     display: flex;
     justify-content: space-between;
-    margin: 15px 0 15px 0;
+    margin: 8px 0 5px 0;
 }
 
 .info_content {
@@ -17,8 +17,19 @@
     white-space: pre-line;
 }
 
+.info {
+    color: #6F6F6F;
+}
+
 .footer {
     display: flex;
+    justify-content: center;
     align-items: flex-end;
     height: 100vh;
+}
+
+.desc {
+    font-family: 'Roboto';
+    font-size: 14px;
+    color: #6F6F6F;
 }

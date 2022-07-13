@@ -12,10 +12,10 @@ const ErrorResponse = (props) => {
                 <div className={styles.pages_content}>
                     <img src={error} alt=' ' />
                     <h3>Ошибка</h3>
-                    {/* <p>{props.response.messages[0]}</p> */}
-                    <span className={styles.description}>Заявка уже существует ожидайте подтверждения</span>
+                    <p  className={styles.description}>{props.response.messages[0]}</p>
+                    {/* <span className={styles.description}>Заявка уже существует ожидайте подтверждения</span> */}
                     <div className={styles.footer}>
-                        <button className={app.btn_light}>Закрыть</button>
+                        <a className={app.btn_light}>Закрыть</a>
                     </div>
                 </div>
             </div>}

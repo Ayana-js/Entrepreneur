@@ -16,7 +16,6 @@ function MainPage(props) {
     const [info, setInfo] = useState()
     const [searchParams] = useSearchParams()
     const search = searchParams.get('phone')
-    localStorage.setItem('phone', search)
     const [isFetching, setIsFetching] = useState(true)
     const [err, setErr] = useState(false)
 
@@ -29,14 +28,14 @@ function MainPage(props) {
                 setInfo(res.data)
                 props.addInfo(res.data)
                 localStorage.setItem('inn', res.data.inn)
-                setIsFetching(false);
+                setIsFetching(false)
             })
             .catch(() => {
-                setErr(true);
+                setErr(true)
                 setIsFetching(false)
-            })  
-        }, []);
-        
+            })
+        }, [])
+    
         if (err) {
             return <div> Error</div>
         }
@@ -54,11 +53,11 @@ function MainPage(props) {
                     <p>ИНН: {info.inn}</p>
                 </div>
             </div>
-             {!info.isHas ? <IPsContainer info={info.orders} /> : <NoIP /> }
+             {info.isHas ? <IPsContainer info={info.orders} /> : <NoIP /> }
             <div className={styles.buttons}>
-                <Link to='/ie-register/registration' >
-                    <button className={`${app.btn} ${app.pages_title}`} >Отправить заявку</button>
-                </Link>
+               {info.isHas ? null   : <Link to='/ie-register/registration' >
+                    <a className={`${app.btn} ${app.pages_title}`} >Отправить заявку</a>
+                </Link>}
             </div>
         </div>}
     </div>

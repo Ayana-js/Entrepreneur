@@ -125,6 +125,14 @@ a {
     height: 100vh;
 }
 
+.preload_page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #F5F5F5;;
+}
+
 .pages_content {
     display: flex;
     align-items: center;

@@ -51,9 +51,11 @@ input:valid ~ label {
 }
 
 .buttons {
-    display: flex;
-    height: 60%;
-    align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    width: 328px;
 }
 
 .form_footer {

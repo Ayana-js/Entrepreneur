@@ -14,7 +14,7 @@ const Success = (props) => {
                     <h3>Заявка успешно отправлена</h3>
                     <p className={styles.description}>Заявка будет рассмотрена налоговым органом в течение 3 рабочих дней</p>
                     <div className={styles.footer}>
-                        <button className={app.btn_light}>Закрыть</button>
+                        <a className={app.btn_light}>Закрыть</a>
                     </div>
                 </div>
             </div>}

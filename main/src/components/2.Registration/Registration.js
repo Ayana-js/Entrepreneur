@@ -109,13 +109,13 @@ const Registration = (props) => {
                                 !props.addressType || !props.passport? 
                                     <button onClick={handleSubmit}
                                     className={`${app.btn_light} ${app.btn_disabled}`}> Продолжить </button> :
-                                    <button onClick={handleSubmit}
+                                    <a onClick={handleSubmit}
                                     className={reg.button}>    
                                     <NavLink to='/ie-register/activity'
                                         className={app.btn_light}>
                                         Продолжить
                                     </NavLink>
-                                </button>}
+                                </a>}
                             </div>
                             </div>
                         </Form>

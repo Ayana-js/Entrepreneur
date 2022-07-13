@@ -3,18 +3,19 @@ import { Link } from 'react-router-dom';
 import styles from '../MainPage.module.css';
 import QRCode from "qrcode.react";
 import { connect } from 'react-redux';
+import { setOrder, setReason } from '../../../redux/reducer';
 
-const IPs = ({ info }) => {
+const IPs = ({ info, addReason, addOrder }) => {
     return (
         <>
             {info.map(info =>
                 <Link to={info.status === 'APPROVED' && 'info'} key={info.created}>
-                    <div className={styles.innerBlock}>
+                    <div className={styles.innerBlock} onClick={() => addOrder(info)}>
                         <div className={styles.innerBlock_status}>
                             <p className={styles.status}>Статус заявки:</p>
                             {info.status === 'APPROVED' && <p className={styles.status_text}>Принят</p>}
                             {info.status === 'IN_PROGRESS' && <p className={styles.status_text_pending}> В обработке</p>}
-                            {info.status === 'DENIED' && <p className={styles.status_text_pending}>Отказано</p>}
+                            {info.status === 'DENIED' && <p className={styles.status_text_declined}>Отказано</p>}
                         </div>
                         <div className={styles.innerBlock_info}>
                             <p className={styles.info_name}> Заявка ИП на:
@@ -31,24 +32,27 @@ const IPs = ({ info }) => {
                             </div>
                         <div onClick={(e) => { e.stopPropagation() }}>
                             <Link to='denialReason'>
+                                <div onClick={() => addReason(info.declinedReason)}>
                                 {info.status === 'DENIED' && <button className={styles.button}> Смотреть причину </button>}
+                                </div>
                             </Link>
                         </div>
                     </div> </Link>)}
-            <div className={styles.buttons}>
-            </div>
         </>
     );
 };
 
-// let mapStateToDispatch = (dispatch) => {
-//     return {
-//         addPatent: (payload) => {
-//             dispatch(setPatent(payload))
-//         }
-//     }
-// }
+let mapStateToDispatch = (dispatch) => {
+    return {
+        addReason: (payload) => {
+            dispatch(setReason(payload))
+        },
+        addOrder: (payload) => {
+            dispatch(setOrder(payload))
+        }
+    }
+}
 
-const IPsContainer = connect(null, null)(IPs)
+const IPsContainer = connect(null, mapStateToDispatch)(IPs)
 
 export default IPsContainer;
