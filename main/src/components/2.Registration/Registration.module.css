@@ -59,7 +59,7 @@ input:valid ~ label {
 }
 
 .form_footer {
-    height: 72px;
+    height: 50px;
     display: flex;
     flex: 0 0 auto;
     justify-content: space-between;

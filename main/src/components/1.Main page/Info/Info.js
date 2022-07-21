@@ -61,7 +61,7 @@ const Info = (props) => {
                     {props.order.taxMode === 'PATENT' && <p>Патент </p>}
                     {props.order.taxMode === 'MINING' && <p >Налог на майнинг</p>}
                     {props.order.taxMode === 'UNIFIED_ZERO_RATE' && <p> Единый налог с нулевой ставкой</p>}
-                    {props.order.taxMode === 'UNIFIED_SPECIFIED' && <p>Единый налог для субъектов применяющих режим условного начисления НДС на импорт товаров  (ст.234) </p>}
+                    {props.order.taxMode === 'UNIFIED_SPECIFIED' && <p>Единый налог для субъектов применяющих режим условного начисления НДС на импорт товаров (ст.234)</p>}
                     {props.order.taxMode === 'UNIFIED' && <p >Единый налог </p>}
                      </p>
                 </div>

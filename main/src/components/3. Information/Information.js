@@ -62,10 +62,10 @@ const Information = (props) => {
                     <p className={styles.info}>Номер телефона</p>
                     <p className={styles.info_content}> {phone} </p>
                 </div>
-                <div className={styles.block}>
+                {props.email && <div className={styles.block}>
                     <p className={styles.info}>E-mail</p>
                     <p className={styles.info_content}> {props.email} </p>
-                </div>
+                </div>}
                 <div className={styles.block}>
                     <p className={styles.info}>Деятельность</p>
                     <p className={styles.info_content}> {props.activity} </p>
