@@ -26,7 +26,7 @@ const EconomActivity = (props) => {
                 setIsFetching(false)
             })
     }, [])
-    
+
     const search = val => {
         let currentItems = [], newList = [];
         if (val !== "") {
@@ -50,7 +50,7 @@ const EconomActivity = (props) => {
     return (
         <div className={styles.pages}>
             {
-                isFetching ? <Preloader /> :
+                isFetching ?<div className={styles.preload}> <Preloader /> </div> :
                     <div className={styles.main_page}>
                         <h2>Экономическая деятельность</h2>
                         <Search {...{ search }} />

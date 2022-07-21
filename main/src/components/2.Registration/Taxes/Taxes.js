@@ -26,7 +26,7 @@ const Taxes = (props) => {
 
     return (
         <div className={styles.pages}>
-            {isFetching ? <Preloader /> :
+            {isFetching ? <div className={styles.preload}> <Preloader /> </div> :
                 <div className={styles.main_page}>
                     <h2>Вид налогового режима</h2>
                     <div className={styles.content}>

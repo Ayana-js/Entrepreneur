@@ -18,17 +18,17 @@ const AddressType = (props) => {
                 setInfo(info)
                 setIsFetching(false)
             })
-    }, []);
+    }, [])
     const i = info.map(i => i)
     return (
         <div className={styles.pages}>
             {
-                isFetching ? <Preloader /> :
+                isFetching ?<div className={styles.preload}> <Preloader /> </div>:
                 <div className={styles.main_page}>
                 <h2>Тип адреса</h2>
                 <div className={styles.content}>
-                {info.map(info => 
-                <div key={info.id}> 
+                {info.map(info =>
+                <div key={info.id}>
                 <Link to='/ie-register/registration'>
                 { info === 'BY_REGISTRATION' && 
                 <p className={styles.description} onClick={(e) =>{ 
@@ -47,8 +47,8 @@ const AddressType = (props) => {
             </div>
                 }
         </div>
-    );
-};
+    )
+}
 
 let mapStateToDispatch = (dispatch) => {
     return {

@@ -8,6 +8,7 @@ import { setRegion } from '../../../../redux/reducer';
 import axios from 'axios';
 import { setRegionId } from '../../../../redux/id-reducer';
 import { baseUrl } from '../../../../api/api';
+import Preloader from '../../../../common/Preloader/Preloader';
 
 const Region = (props) => {
     const [info, setInfo] = useState([])
@@ -31,7 +32,8 @@ const Region = (props) => {
     }
 
     return (
-        <div className={`${region.region} ${app.pages}`}>
+        <>
+          {isFetching? <div className={region.preload}> <Preloader /> </div> :<div className={`${region.region} ${app.pages}`}>
             <div className={`${region.region_content} ${app.pages_content}`}>
                 <h2>Выбрать область</h2>
                 <ul className={app.title}> 
@@ -47,7 +49,9 @@ const Region = (props) => {
                     </NavLink>
                 </ul>
             </div>
-        </div>
+        </div>}
+        </>
+        
     )
 }
 

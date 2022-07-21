@@ -29,7 +29,7 @@ const CitiesAndVillages = (props) => {
     }, []);
 
     return (<>
-        {isFetching ? <div className={styles.preload}> <Preloader /> </div> :
+        {isFetching ? <div className={app.preload}> <Preloader /> </div> :
             <div className={`${styles.citys} ${app.pages}`}>
                 <div className={`${styles.citys_content} ${app.pages_content}`}>
                     <h2>Выбрать город</h2>

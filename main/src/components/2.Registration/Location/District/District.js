@@ -12,18 +12,21 @@ import { baseUrl } from '../../../../api/api';
 
 const District = (props) => {
     const [info, setInfo] = useState([])
-    const [isFetching, setIsFetching] = useState(true)
+    const [isFetching, setIsFetching] = useState(false)
+
+    useEffect(() => {
+        setIsFetching(true)
+    })
 
     useEffect(() => {
                 axios.post(baseUrl + `/api/v1/region`,
                 {id: props.id})
                     .then(res => {
                         const info = res.data
-                        setInfo(info)   
-                        setIsFetching(false) 
+                        setInfo(info)
+                        setIsFetching(false)
                     })
-                    .catch(setIsFetching(false))
-    }, []);
+    }, [])
 
     return (
         <>
@@ -57,7 +60,7 @@ const District = (props) => {
                     )}
                 </ul>
             </div>
-        </div> }
+        </div>}
         </>
     )
 }

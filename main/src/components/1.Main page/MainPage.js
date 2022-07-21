@@ -40,7 +40,7 @@ function MainPage(props) {
         }, [])
     
         if (err) {
-            return <div> Error</div>
+            return <div> Error </div>
         }
 
     return (
