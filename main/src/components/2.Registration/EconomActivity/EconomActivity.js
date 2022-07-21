@@ -26,7 +26,7 @@ const EconomActivity = (props) => {
                 setIsFetching(false)
             })
     }, [])
-
+    
     const search = val => {
         let currentItems = [], newList = [];
         if (val !== "") {
@@ -42,6 +42,7 @@ const EconomActivity = (props) => {
         }
         setFiltered(newList);
     };
+
 
     if (err) {
         return <div>{err}</div>

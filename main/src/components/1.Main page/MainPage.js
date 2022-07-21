@@ -18,6 +18,7 @@ function MainPage(props) {
     const search = searchParams.get('phone')
     const [isFetching, setIsFetching] = useState(true)
     const [err, setErr] = useState(false)
+    const [status, setStatus] = useState([])
 
     useEffect(() => {
         axios.get(baseUrl + '/api/v1/order-result?phone=' + search, {
@@ -28,6 +29,8 @@ function MainPage(props) {
                 setInfo(res.data)
                 props.addInfo(res.data)
                 localStorage.setItem('inn', res.data.inn)
+                const status = res.data.orders.map(order => order.status)
+                setStatus(status)
                 setIsFetching(false)
             })
             .catch(() => {
@@ -53,11 +56,12 @@ function MainPage(props) {
                     <p>ИНН: {info.inn}</p>
                 </div>
             </div>
-             {info.isHas ? <IPsContainer info={info.orders} /> : <NoIP /> }
+            <IPsContainer info={info.orders} />
+             {!info.isHas && <NoIP />}
             <div className={styles.buttons}>
-               {info.isHas ? null   : <Link to='/ie-register/registration' >
+               {status[0] === 'DENIED' || !info.isHas? <Link to='/ie-register/registration' >
                     <a className={`${app.btn} ${app.pages_title}`} >Отправить заявку</a>
-                </Link>}
+                </Link>: null}
             </div>
         </div>}
     </div>

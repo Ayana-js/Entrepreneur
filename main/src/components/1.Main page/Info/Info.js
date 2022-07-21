@@ -46,10 +46,10 @@ const Info = (props) => {
                     <p className={styles.info}>Номер телефона</p>
                     <p className={styles.info_content}> {phone} </p>
                 </div>
-                <div className={styles.block}>
+               {props.order.email && <div className={styles.block}>
                     <p className={styles.info}>E-mail</p>
                     <p className={styles.info_content}> {props.order.email} </p>
-                </div>
+                </div>}
                 <div className={styles.block}>
                     <p className={styles.info}>Деятельность</p>
                     <p className={styles.info_content}> {props.order.activityName} </p>
@@ -66,7 +66,7 @@ const Info = (props) => {
                      </p>
                 </div>
                 <div className={styles.footer}>
-                <a href={props.order.qrUrl} className={`${app.btn} ${app.pages_title}`} download>Скачать сертификат</a>
+               {props.order.status === 'APPROVED' && <a href={props.order.qrUrl} className={`${app.btn} ${app.pages_title}`} download>Скачать сертификат</a>}
                 </div>
             </div>
         </div>

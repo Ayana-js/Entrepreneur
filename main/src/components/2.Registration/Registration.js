@@ -7,7 +7,7 @@ import arrow from '../../assests/arrow.svg';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setRegion, setValues } from '../../redux/reducer';
-import { setAddressType, setEmail, setExactAddress, setLocation, setPassport } from '../../redux/form-reducer';
+import { setAddressType, setEmail, setExactAddress, setPassport } from '../../redux/form-reducer';
 
 const Registration = (props) => {
     const validationSchema = yup.object().shape({
@@ -113,7 +113,7 @@ const Registration = (props) => {
                                     className={reg.button}>    
                                     <NavLink to='/ie-register/activity'
                                         className={app.btn_light}>
-                                        Продолжить
+                                        Продолжить 
                                     </NavLink>
                                 </a>}
                             </div>

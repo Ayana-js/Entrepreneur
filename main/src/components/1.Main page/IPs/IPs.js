@@ -9,7 +9,7 @@ const IPs = ({ info, addReason, addOrder }) => {
     return (
         <>
             {info.map(info =>
-                <Link to={info.status === 'APPROVED' && 'info'} key={info.created}>
+                <Link to={info.status === 'APPROVED' || info.status === 'IN_PROGRESS'? 'info': ''} key={info.created}>
                     <div className={styles.innerBlock} onClick={() => addOrder(info)}>
                         <div className={styles.innerBlock_status}>
                             <p className={styles.status}>Статус заявки:</p>

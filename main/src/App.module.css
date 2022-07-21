@@ -122,8 +122,7 @@ a {
 .pages {
     display: flex;
     justify-content: center;
-    height: 100vh;
-}
+    }
 
 .preload_page {
     display: flex;
