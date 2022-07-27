@@ -38,10 +38,8 @@ const Region = (props) => {
                 <h2>Выбрать область</h2>
                 <ul className={app.title}> 
                     <NavLink to='/ie-register/cities'>
-                        <div onClick={(e) => {
-                                onAddRegion(e.target.innerText)
-                                }}>
-                        {info.map(r => <li key={r.id} className={`${region.region_items} ${app.items}`} onClick={() => props.addRegionId(r.id)}>
+                        <div>
+                        {info.map(r => <li key={r.id} className={`${region.region_items} ${app.items}`} onClick={() => {props.addRegionId(r.id); onAddRegion(r.name)}}>
                             <p>{r.name} </p>
                             <img src={arrow} alt="" />
                         </li>)}
