@@ -5,15 +5,15 @@ import styles from '../../3. Information/Information.module.css'
 import style from '../MainPage.module.css'
 
 const Info = (props) => {
-
     const phone = localStorage.getItem('phone')
     return (
         <div className={app.pages}>
             <div className={styles.content}>
                 <h2>Информация</h2>
+                <div className={styles.content_block}>
                 <div className={styles.block}>
                     <p className={styles.info}> Статус </p>
-                    <p className={styles.info_content}> 
+                    <p> 
                     {props.order.status === 'DENIED' && <p className={style.status_text_declined}>Отказано</p>}
                     {props.order.status === 'APPROVED' && <p className={style.status_text}>Принят</p>}
                     {props.order.status === 'IN_PROGRESS' && <p className={style.status_text_pending}> В обработке</p>}
@@ -21,42 +21,42 @@ const Info = (props) => {
                 </div>
                 <div className={styles.block}>
                     <p className={styles.info}> ИНН </p>
-                    <p className={styles.info_content}> {props.info.inn} </p>
+                    <p> {props.info.inn} </p>
                 </div>
                 <div className={styles.block}>
                     <p className={styles.info}> Номер паспорта </p>
-                    <p className={styles.info_content}> {props.order.passportNumber} </p>
+                    <p> {props.order.passportNumber} </p>
                 </div>
                 <div className={styles.block}>
                     <p className={styles.info}>Месторасположение деятельности   </p>
-                    <p className={styles.info_content}>{props.order.businessAddress} </p>
+                    <p>{props.order.businessAddress} </p>
                 </div>
                 <div className={styles.block}>
                     <p className={styles.info}> Точный адрес деятельности	</p>
-                    <p className={styles.info_content}> {props.order.addressStreet} </p>
+                    <p> {props.order.addressStreet} </p>
                 </div>
                 <div className={styles.block}>
                     <p className={styles.info}>Тип адреса</p>
-                    <p className={styles.info_content}> 
+                    <p> 
                     { props.order.addressType === 'BY_REGISTRATION' && <p>По прописке</p> } 
                     { props.order.addressType === 'BY_ACTIVITY' && <p>По месту осуществления деятельности</p>}
                     {props.order.addressType === 'PEASANT_FARMING' && <p>КФХ</p>} </p>
                 </div>
                 <div className={styles.block}>
                     <p className={styles.info}>Номер телефона</p>
-                    <p className={styles.info_content}> {phone} </p>
+                    <p> {phone} </p>
                 </div>
                {props.order.email && <div className={styles.block}>
                     <p className={styles.info}>E-mail</p>
-                    <p className={styles.info_content}> {props.order.email} </p>
+                    <p> {props.order.email} </p>
                 </div>}
                 <div className={styles.block}>
                     <p className={styles.info}>Деятельность</p>
-                    <p className={styles.info_content}> {props.order.activityName} </p>
+                    <p> {props.order.activityName} </p>
                 </div>
                 <div className={styles.block}>
                     <p className={styles.info}>Вид налога</p>
-                    <p className={styles.info_content}> 
+                    <p> 
                     {props.order.taxMode === 'GENERAL' && <p> Общий налоговый режим</p>}
                     {props.order.taxMode === 'PATENT' && <p>Патент </p>}
                     {props.order.taxMode === 'MINING' && <p >Налог на майнинг</p>}
@@ -65,7 +65,8 @@ const Info = (props) => {
                     {props.order.taxMode === 'UNIFIED' && <p >Единый налог </p>}
                      </p>
                 </div>
-                <div className={styles.footer}>
+            </div>
+            <div className={styles.footer}>
                {props.order.status === 'APPROVED' && <a href={props.order.qrUrl} className={`${app.btn} ${app.pages_title}`} download>Скачать сертификат</a>}
                 </div>
             </div>

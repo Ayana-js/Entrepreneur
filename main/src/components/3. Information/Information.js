@@ -38,6 +38,7 @@ const Information = (props) => {
         <div className={app.pages}>
             <div className={styles.content}>
                 <h2>Информация</h2>
+                <div className={styles.content_block}>
                 <div className={styles.block}>
                     <p className={styles.info}> ИНН </p>
                     <p className={styles.info_content}> {props.info.inn} </p>
@@ -74,9 +75,10 @@ const Information = (props) => {
                     <p className={styles.info}>Вид налога</p>
                     <p className={styles.info_content}> {props.tax} </p>
                 </div>
-                <div className={styles.footer}>
-                        <Link to='/ie-register/response'>
-                            <a className={app.btn_light} onClick={() => onSend()}>Отправить заявку</a>
+            </div>
+            <div className={styles.footer}>
+                        <Link to='/ie-register/response'
+                            className={app.btn} onClick={() => onSend()}>Отправить заявку
                         </Link> 
                 </div>
             </div>

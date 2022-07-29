@@ -96,3 +96,9 @@ input:valid ~ label {
     margin-top: -15px;
     color: var(--color-lighter)
 }
+
+@media (min-width: 385px) {
+    .buttons {
+        width: 380px;
+    }
+}

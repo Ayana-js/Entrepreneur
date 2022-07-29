@@ -7,9 +7,9 @@ import { setOrder, setReason } from '../../../redux/reducer';
 
 const IPs = ({ info, addReason, addOrder }) => {
     return (
-        <>
+        <div className={styles.con_inner}>
             {info.map(info =>
-                <Link to={info.status === 'APPROVED' || info.status === 'IN_PROGRESS'? 'info': ''} key={info.created}>
+                <Link to={info.status === 'APPROVED' || info.status === 'IN_PROGRESS'? 'info': ''} key={info.created} className={styles.con_inner}>
                     <div className={styles.innerBlock} onClick={() => addOrder(info)}>
                         <div className={styles.innerBlock_status}>
                             <p className={styles.status}>Статус заявки:</p>
@@ -38,7 +38,7 @@ const IPs = ({ info, addReason, addOrder }) => {
                             </Link>
                         </div>
                     </div> </Link>)}
-        </>
+        </div>
     );
 };
 

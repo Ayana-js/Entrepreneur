@@ -1,8 +1,11 @@
 .content {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-white);
     width: 360px;
+}
+
+.content_block {
+    flex: 1 0 auto;
 }
 
 .block {
@@ -11,25 +14,29 @@
     margin: 8px 0 5px 0;
 }
 
-.info_content {
-    margin-right: -35px;
-    white-space: pre-line;
-}
-
 .info {
     color: #6F6F6F;
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 70px;
-    width: 328px;
+    flex-shrink: 0;
 }
 
 .desc {
     font-family: 'Roboto';
     font-size: 14px;
     color: #6F6F6F;
+}
+
+@media (min-width: 280px) and (max-width: 380px) {
+    .content {
+        width: 330px;
+    }
+}
+
+@media (min-width: 385px) and (max-width: 1000px) {
+    .content {
+        width: 365px;
+        margin: 35px 0 44px 0;
+    }
 }

@@ -12,11 +12,7 @@ import { baseUrl } from '../../../../api/api';
 
 const District = (props) => {
     const [info, setInfo] = useState([])
-    const [isFetching, setIsFetching] = useState(false)
-
-    useEffect(() => {
-        setIsFetching(true)
-    })
+    const [isFetching, setIsFetching] = useState(true)
 
     useEffect(() => {
                 axios.post(baseUrl + `/api/v1/region`,

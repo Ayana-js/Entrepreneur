@@ -59,8 +59,8 @@ function MainPage(props) {
             <IPsContainer info={info.orders} />
              {!info.isHas && <NoIP />}
             <div className={styles.buttons}>
-               {status[0] === 'DENIED' || !info.isHas? <Link to='/ie-register/registration' >
-                    <a className={`${app.btn} ${app.pages_title}`} >Отправить заявку</a>
+               {status[0] === 'DENIED' || !info.isHas? <Link to='/ie-register/registration' 
+                    className={`${app.btn} ${app.pages_title}`}> Отправить заявку
                 </Link>: null}
             </div>
         </div>}

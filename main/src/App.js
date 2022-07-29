@@ -17,6 +17,7 @@ import InfoContainer from './components/1.Main page/Info/Info';
 import DenialReasonContainer from './components/1.Main page/IPs/DenialReason/DenialReason';
 import Check from './components/1.Main page/Check/Check';
 import ResponseContainer from './common/Resonse/Response';
+import ErrorResponseContainer from './common/ErrorResponse/ErrorResponse';
 
 function App() {
     return (

@@ -5,19 +5,16 @@
 }
 
 .main_page {
-    width: 360px;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: left;
     flex-direction: column;
 }
 
 .content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: left;
+    width: 360px;
 }
 
 .text {
@@ -38,4 +35,17 @@
 
 .preload {
     margin-top: 40%;
+}
+
+@media (min-width: 280px) and (max-width: 380px) {
+    .main_page {
+        width: 330px;
+    }
+}
+
+@media (min-width: 385px) and (max-width: 500px) {
+    .b {
+        width: 365px;
+        margin: 35px 0 44px 0;
+    }
 }
